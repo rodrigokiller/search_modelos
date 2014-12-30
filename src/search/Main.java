@@ -115,7 +115,7 @@ public class Main extends JFrame implements ActionListener{
 	 * Create the frame.
 	 */
 	public Main() {
-		setTitle("Modelo de relat\u00F3rios Sapiens - Pesquisa");
+		setTitle("Modelo de relat√≥rios Sapiens - Pesquisa");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Main.class.getResource("/ico/TrImpExp_MAINICON.ico")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 826, 587);
@@ -155,7 +155,7 @@ public class Main extends JFrame implements ActionListener{
 			public void keyReleased(KeyEvent arg0) {								
 				strFiltro = tfFilter.getText();
 				
-				// Retira excesso de asterÌscos (*)				
+				// Retira excesso de aster√≠scos (*)
 				while (strFiltro.contains("**"))				
 					strFiltro = strFiltro.substring(0, strFiltro.indexOf("**")) + strFiltro.substring(strFiltro.indexOf("**")+1, strFiltro.length());									
 				if (strFiltro.startsWith("*"))
@@ -180,13 +180,13 @@ public class Main extends JFrame implements ActionListener{
 		
 		btnFiltros = new JButton("Copiar");
 		btnFiltros.setVisible(false);
-		btnFiltros.setToolTipText("Copiar para a \u00E1rea de transfer\u00EAncia");
+		btnFiltros.setToolTipText("Copiar para a √°rea de transfer√™ncia");
 		btnFiltros.addActionListener(this);
 		
 		
 		spFiles = new JScrollPane();
 		
-		cbCaseS = new JCheckBox("For\u00E7ar ma\u00EDsculas/min\u00FAsculas");
+		cbCaseS = new JCheckBox("For√ßar mai√∫sculas/min√∫sculas");
 		cbCaseS.addActionListener(this);
 		
 		rdbtnVetorh = new JRadioButton("Vetorh");
@@ -268,7 +268,7 @@ public class Main extends JFrame implements ActionListener{
 			new Object[][] {							
 			},
 			new String[] {
-				"Arquivo", "DescriÁ„o", "Data modificaÁ„o"
+				"Arquivo", "Descri√ß√£o", "Data modifica√ß√£o"
 			}
 		){
 		    @Override
@@ -463,7 +463,7 @@ public class Main extends JFrame implements ActionListener{
 			}
 			else{												
 				if (!myfile.isDirectory()){
-					JOptionPane.showMessageDialog(null, "Insira um caminho v·lido");
+					JOptionPane.showMessageDialog(null, "Insira um caminho v√°lido");
 					limpa_tabela();
 					lblCaminho.setText("Caminho");
 					pathVal = false;
@@ -559,7 +559,7 @@ public class Main extends JFrame implements ActionListener{
 	}
 	
 	public void insere_tabela_dados(String typefile[]){
-		Collection foundFiles = listFiles(myfile, null, true); // chama a funÁ„o collection que n„o fui eu que criei, mas pega todos os arquivos de uma pasta
+		Collection foundFiles = listFiles(myfile, null, true); // chama a fun√ß√£o collection que n√£o fui eu que criei, mas pega todos os arquivos de uma pasta
 		Object fF [] = foundFiles.toArray(); // cria um objeto vetor com os arquivos que retornaram acima
 		File fileList[] = new File[fF.length];  // cria um vetor de File, do tamanho do vetor de objetos
 
@@ -604,7 +604,7 @@ public class Main extends JFrame implements ActionListener{
 				JOptionPane.showMessageDialog(null, "Erro: " + e);
 			}
 
-			// Aqui È a inserÁ„o dos arquivos na tabela 
+			// Aqui √© a inser√ß√£o dos arquivos na tabela
 			for (int j = 0; j < typefile.length; j++) {
 				if ((fileList[i].getName().toUpperCase().endsWith(typefile[j]) || typefile == null) && (desc.contains(strFiltro))){
 					javax.swing.table.DefaultTableModel dtm =
@@ -658,7 +658,7 @@ public class Main extends JFrame implements ActionListener{
 			caseS = "(?i)";
 		List<RowFilter<Object,Object>> filters = new ArrayList<RowFilter<Object,Object>>(2);
 		
-		// Aqui ele vai adicionar para cada filtro um novo filtro. Mas n„o È nesse momento que ser· fieto o filtro							
+		// Aqui ele vai adicionar para cada filtro um novo filtro. Mas n√£o √© nesse momento que ser√° fieto o filtro
 		if (aFiltro != null){		
 			for (int i = 0; i < aFiltro.length; i++) {
 				filters.add(RowFilter.regexFilter(caseS + aFiltro[i], 1));				
